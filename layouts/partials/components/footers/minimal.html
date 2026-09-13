@@ -1,0 +1,43 @@
+{{/* STAGES footer: Pitt shield left, contact info right */}}
+<div class="stages-footer d-flex flex-wrap justify-content-between align-items-center py-3">
+  <div class="stages-footer-logo">
+    <a href="https://www.geology.pitt.edu/" rel="noopener noreferrer" target="_blank" aria-label="University of Pittsburgh">
+      <img src="{{ (resources.Get "media/Shield_UnivPittsburgh_ALLWHITE.png").RelPermalink }}" alt="University of Pittsburgh" height="70">
+    </a>
+  </div>
+  <div class="stages-footer-contact text-right">
+    Department of Geology and Environmental Science<br>
+    University of Pittsburgh<br>
+    4107 O'Hara Street, SRCC Room 200<br>
+    Pittsburgh, PA 15260<br>
+    <a href="mailto:gavin_piccione@pitt.edu">your-username@pitt.edu</a>
+  </div>
+</div>
+
+{{ if .IsTranslated | and site.Params.footer.show_translations }}
+<div class="powered-by d-flex flex-wrap pb-2 justify-content-center">
+  <div class="p-2 font-weight-bold"><i class="fas fa-globe pr-1" aria-hidden="true"></i>{{ i18n "languages" }}:</div>
+  <div class="p-2">{{ index site.Data.i18n.languages .Lang }}</div>
+  {{ range .Translations }}
+  <div class="p-2"><a href="{{ .Permalink }}">{{ index site.Data.i18n.languages .Lang }}</a></div>
+  {{ end }}
+</div>
+{{ end }}
+{{ if or (site.GetPage "/terms.md") (site.GetPage "/privacy.md") }}
+<p class="powered-by">
+  {{ with site.GetPage "/privacy.md" }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+  {{ with site.GetPage "/terms.md" }}
+  {{ if site.GetPage "/privacy.md" }} &middot; {{ end }}
+  {{ printf "<a href=\"%s\">%s</a>" .RelPermalink .Title | safeHTML }}
+  {{ end }}
+</p>
+{{ end }}
+{{ with site.Params.footer.text }}
+<p class="powered-by">
+  {{ . | markdownify | emojify }}
+</p>
+{{ end }}
+{{/* Display copyright license. */}}
+{{ partial "site_footer_license" . }}

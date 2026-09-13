@@ -1,0 +1,20 @@
+# Theme metadata
+name = "STAGES"
+
+[light]
+  primary = "hsl(212, 60%, 62%)"
+  menu_primary = "hsl(223, 45%, 22%)"
+  menu_text = "rgba(255,255,255,1)"
+  menu_text_active = "rgba(255,255,255,1)"
+  menu_title = "#fff"
+  home_section_odd = "hsl(223, 40%, 24%)"
+  home_section_even = "hsl(223, 38%, 21%)"
+
+[dark]
+  primary = "hsl(212, 60%, 62%)"
+  menu_primary = "hsl(223, 45%, 22%)"
+  menu_text = "rgba(255,255,255,1)"
+  menu_text_active = "rgba(255,255,255,1)"
+  menu_title = "#fff"
+  home_section_odd = "hsl(223, 40%, 24%)"
+  home_section_even = "hsl(223, 38%, 21%)"

@@ -1,4 +1,4 @@
-// Make page header alignment consistent with widget page header alignment
+// Center page headers
 .universal-wrapper h1 {
   text-align: center;
 }
@@ -6,4 +6,39 @@
 // Center the CTA shortcode button
 .cta-group {
   justify-content: center;
+}
+
+// ===== STAGES footer =====
+// Widen the footer so logo + contact sit side by side instead of stacking
+.page-footer .container {
+  max-width: 1140px !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+.stages-footer {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.stages-footer-logo img {
+  height: 140px !important;
+  width: auto !important;
+  display: block;
+}
+.stages-footer-contact {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  text-align: right;
+}
+.stages-footer-contact a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+// Hide the "Published with Hugo Blox" line, keep the copyright
+.page-footer .powered-by:not(.copyright-license-text) {
+  display: none !important;
 }
